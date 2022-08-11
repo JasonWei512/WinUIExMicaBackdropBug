@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "WinUIExMicaBackdropBug (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "WinUIExMicaBackdropBug (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
