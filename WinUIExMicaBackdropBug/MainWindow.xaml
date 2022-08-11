@@ -1,13 +1,21 @@
-﻿<Window
+﻿<windowex:WindowEx
     x:Class="WinUIExMicaBackdropBug.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:WinUIExMicaBackdropBug"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:WinUIExMicaBackdropBug"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:windowex="using:WinUIEx"
     mc:Ignorable="d">
+    <windowex:WindowEx.Backdrop>
+        <windowex:MicaSystemBackdrop />
+    </windowex:WindowEx.Backdrop>
 
-    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+    <StackPanel
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center"
+        Orientation="Vertical">
+        <TextBlock>Click the button, the window will close, then show again after 1 second, and the Mica backdrop will disappear.</TextBlock>
         <Button x:Name="myButton" Click="myButton_Click">Click Me</Button>
     </StackPanel>
-</Window>
+</windowex:WindowEx>

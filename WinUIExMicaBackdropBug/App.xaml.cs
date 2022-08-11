@@ -15,6 +15,7 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using WinUIEx;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -42,10 +43,18 @@ namespace WinUIExMicaBackdropBug
         /// <param name="args">Details about the launch request and process.</param>
         protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
         {
-            m_window = new MainWindow();
-            m_window.Activate();
+            MainWindow = new MainWindow();
+            MainWindow.Closed += M_window_Closed;
+            MainWindow.Activate();
         }
 
-        private Window m_window;
+        private void M_window_Closed(object sender, WindowEventArgs args)
+        {
+            args.Handled = true;
+            MainWindow.Hide();
+            
+        }
+
+        public static Window MainWindow { get; private set; }
     }
 }
