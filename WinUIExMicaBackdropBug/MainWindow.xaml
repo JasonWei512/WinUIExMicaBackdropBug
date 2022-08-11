@@ -16,6 +16,11 @@
         VerticalAlignment="Center"
         Orientation="Vertical">
         <TextBlock>Click the button, the window will close, then show again after 1 second, and the Mica backdrop will disappear.</TextBlock>
-        <Button x:Name="myButton" Click="myButton_Click">Click Me</Button>
+        <Button x:Name="bugButton" Click="bugButton_Click">Bug</Button>
+
+        <Grid Height="30" />
+
+        <TextBlock>Workaround: Set &quot;Window.Backdrop&quot; to &quot;new MicaSystemBackdrop()&quot; after calling &quot;Window.Show()&quot;</TextBlock>
+        <Button x:Name="workaroundButton" Click="workaroundButton_Click">Workaround</Button>
     </StackPanel>
 </windowex:WindowEx>

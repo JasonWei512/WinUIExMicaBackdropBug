@@ -55,6 +55,6 @@ namespace WinUIExMicaBackdropBug
             
         }
 
-        public static Window MainWindow { get; private set; }
+        public static WindowEx MainWindow { get; private set; }
     }
 }

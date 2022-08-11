@@ -30,11 +30,19 @@ namespace WinUIExMicaBackdropBug
             this.InitializeComponent();
         }
 
-        private async void myButton_Click(object sender, RoutedEventArgs e)
+        private async void bugButton_Click(object sender, RoutedEventArgs e)
         {
             App.MainWindow.Close();
             await Task.Delay(TimeSpan.FromSeconds(1));
             App.MainWindow.Show();
+        }
+
+        private async void workaroundButton_Click(object sender, RoutedEventArgs e)
+        {
+            App.MainWindow.Close();
+            await Task.Delay(TimeSpan.FromSeconds(1));
+            App.MainWindow.Show();
+            App.MainWindow.Backdrop = new MicaSystemBackdrop();
         }
     }
 }
